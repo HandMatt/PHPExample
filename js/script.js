@@ -12,7 +12,7 @@ $("#countryCodeRun").click(function() {
 
   // Run AJAX call to the PHP routine
   $.ajax({
-    url: "/php/getCountryCode.php",
+    url: "php/getCountryCode.php",
     // Set the expected format
     type: 'POST',
     dataType: 'json',
@@ -42,7 +42,7 @@ $("#countryCodeRun").click(function() {
 
 $("#oceanRun").click(function() {
   $.ajax({
-    url: "/php/getOcean.php",
+    url: "php/getOcean.php",
     type: 'POST',
     dataType: 'json',
     data: {
@@ -63,7 +63,7 @@ $("#oceanRun").click(function() {
 
 $("#earthquakesRun").click(function() {
   $.ajax({
-    url: "/php/getEarthquakes.php",
+    url: "php/getEarthquakes.php",
     type: 'POST',
     dataType: 'json',
     data: {
