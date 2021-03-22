@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <title>AJAX/PHP/CURL/JSON examples</title>
+    <meta name="author" content="Matt Hand">
+    <meta name="description" content="AJAX/PHP/CURL/JSON examples.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="favicon.ico" rel="icon">
+    <link href="vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  
+  </head>
+
+  <body>
+
+    <header></header>
+
+    <main>
+
+      <table>
+        <thead>
+          <tr><th>API name</th><th>API description</th><th></th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>countryCode</td>
+            <td>The iso country code of any given point.<br/>
+              Webservice Type : REST<br/>
+              Url : api.geonames.org/countryCode?<br/>
+              Parameters : lat, lng, type, lang, radius (buffer in km for closest country in coastal areas, a positive buffer expands the positiv area whereas a negative buffer reduces it);<br/>
+              Result : returns the iso country code for the given latitude/longitude.<br/>
+              </td>
+            <td>
+              <label for="countryCodeLong">Longitude</label>
+              <input id="countryCodeLong" type="number" value="10.2" step="0.01" min="-180" max="180">
+              <br/>
+              <label for="countryCodeLat">Latitude</label>
+              <input id="countryCodeLat" type="number" value="47.03" step="0.01" min="-90" max="90">
+              <br/>
+              <button id="countryCodeRun">Submit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>ocean</td>
+            <td>The name of the ocean or sea.<br/>
+              Webservice Type : REST<br/>
+              Url : api.geonames.org/ocean?<br/>
+              Parameters : lat,lng, radius (optional)<br/>
+              Result : returns the ocean or sea for the given latitude/longitude.</td>
+            <td>
+              <label for="oceanLong">Longitude</label>
+              <input id="oceanLong" type="number" value="0.00" step="0.01" min="-180" max="180">
+              <br/>
+              <label for="oceanLat">Latitude</label>
+              <input id="oceanLat" type="number" value="0.00" step="0.01" min="-90" max="90">
+              <br/>
+              <button id="oceanRun">Submit</button>
+            </td>
+          </tr>
+          <tr>
+            <td>earthquakes</td>
+            <td>Recent Earthquakes<br/>
+              Webservice Type : REST<br/>
+              Url : api.geonames.org/earthquakesJSON?<br/>
+              Parameters :
+              north,south,east,west : coordinates of bounding box
+              callback : name of javascript function (optional parameter)
+              date : date of earthquakes 'yyyy-MM-dd', optional parameter, earthquakes older or equal the given date sorted by date,magnitude
+              minMagnitude : minimal magnitude, optional parameter
+              maxRows : maximal number of rows returned (default = 10)<br/>
+              Result : returns a list of earthquakes, ordered by magnitude, only first result is displayed below.</td>
+            <td>
+              <label for="earthquakesNorth">North boundary</label>
+              <input id="earthquakesNorth" type="number" value="44.1" step="0.01" min="-90" max="90">
+              <br/>
+              <label for="earthquakesSouth">South boundary</label>
+              <input id="earthquakesSouth" type="number" value="-9.9" step="0.01" min="-90" max="90">
+              <br/>
+              <label for="earthquakesEast">East boundary</label>
+              <input id="earthquakesEast" type="number" value="-22.4" step="0.01" min="-180" max="180">
+              <br/>
+              <label for="earthquakesWest">West boundary</label>
+              <input id="earthquakesWest" type="number" value="55.2" step="0.01" min="-180" max="180">
+              <br/>
+              <button id="earthquakesRun">Submit</button>            
+            </td>
+          </tr>
+          <tr>
+            <th colspan="3">RESULTS</th>
+          </tr>
+          <tr>
+            <td>countryCode</td>
+            <td colspan="2">
+              Code: <span id="countryCodeResult"></span><br/>
+              Country: <span id="countryCodeName"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>ocean</td>
+            <td colspan="2">
+              Name: <span id="oceanResult"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>earthquakes</td>
+            <td colspan="2">
+              Datetime: <span id="earthquakeDatetime"></span><br/>
+              Longitude: <span id="earthquakeLongitude"></span><br/>
+              Latitude: <span id="earthquakeLatitude"></span><br/>
+              Depth: <span id="earthquakeDepth"></span><br/>
+              Magnitude: <span id="earthquakeMagnitude"></span><br/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </main>
+
+    <div id="preloader"></div>
+
+    <script type="application/javascript" src="vendors/jquery/jquery.min.js"></script>
+    <script type="application/javascript" src="vendors/bootstrap/bootstrap.min.js"></script>
+    <script type="application/javascript" src="js/script.js"></script>
+
+  </body>
+</html>
