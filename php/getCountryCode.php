@@ -1,4 +1,3 @@
-
 <?php
   /* Initiate comprehensive error reporting.
   To access error report enter the full path as it appears on the web server. e.g "localhost/geonamesExample/libs/php/getCountryInfo.php?lang=en&country=GB" */

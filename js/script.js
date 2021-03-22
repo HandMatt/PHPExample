@@ -19,7 +19,7 @@ $("#countryCodeRun").click(function() {
     // Pass values of the two inputs as the parameters.
     data: {
       lat: $('#countryCodeLat').val(),
-      long: $('#countryCodeLong').val(),
+      long: $('#countryCodeLong').val()
     },
     success: function(result) {
       // PHP output is stored in the result object
@@ -34,6 +34,7 @@ $("#countryCodeRun").click(function() {
 
     },
     error: function(jqXHR, textStatus, errorThrown) {
+      console.log(jqXHR.responseText);
       console.log(errorThrown);
     }
   });
@@ -47,7 +48,7 @@ $("#oceanRun").click(function() {
     dataType: 'json',
     data: {
       lat: $('#oceanLat').val(),
-      long: $('#oceanLong').val(),
+      long: $('#oceanLong').val()
     },
     success: function(result) {
       console.log(JSON.stringify(result));
@@ -56,6 +57,7 @@ $("#oceanRun").click(function() {
       }
     },
     error: function(jqXHR, textStatus, errorThrown) {
+      console.log(jqXHR.responseText);
       console.log(errorThrown);
     }
   });
@@ -70,7 +72,7 @@ $("#earthquakesRun").click(function() {
       north: $("#earthquakesNorth").val(),
       south: $("#earthquakesSouth").val(),
       east: $("#earthquakesEast").val(),
-      west: $("#earthquakesWest").val(),
+      west: $("#earthquakesWest").val()
     },
     success: function(result) {
       console.log(JSON.stringify(result));
@@ -83,6 +85,7 @@ $("#earthquakesRun").click(function() {
       }
     },
     error: function(jqXHR, textStatus, errorThrown) {
+      console.log(jqXHR.responseText);
       console.log(errorThrown);
     }
   });
